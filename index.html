@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação</title>
+    <link href="estilo.css" rel="stylesheet">
+        <!-- Autor: Mykoll
+    Data de Criação: 13/05/24  até  17/05/24 
+    Desafio Hackaton onde eu precisava montar um sistema de reserva de cursos , alterar data e excluir, o mais longe que eu cheguei no prazo de 3 dias-->
+</head>
+
+<body>
+    <header>
+        <div id="menu">
+            <div id="abrir-menu"><img src="assets/logo_senac_default.png" alt=""></div>
+            <span><img src="assets/menu_24dp_FILL0_wght400_GRAD0_opsz24.png"></span>
+
+        </div>
+        <button id="alterar" class="btn-alterar" style="display: none;">Alterar</button>
+        <button id="excluir" class="btn-alterar" style="display: none;">Excluir</button>
+        <nav id="nav-direito">
+            <img src="assets/notifications_24dp_FILL0_wght400_GRAD0_opsz24.png">
+            <div id="aba-login" style="display: contents;">
+                <img id="seta-down" src="assets/person_24dp_FILL0_wght400_GRAD0_opsz24.png">
+                <div id="abrirLogin">
+                    <button id="entrarLogin">Login</button>
+                    <button>Registro</button>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="lado-esquerdo">
+            <div id="container">
+                <div id="header">
+                    <div id="monthDisplay"></div>
+
+                    <div>
+                        <button id="backButton">&lt;</button>
+                        <button id="nextButton">&gt;</button>
+                    </div>
+
+                </div>
+
+                <div id="weekdays">
+                    <div>D</div>
+                    <div>S</div>
+                    <div>T</div>
+                    <div>Q</div>
+                    <div>Q</div>
+                    <div>S</div>
+                    <div>S</div>
+                </div>
+                <div id="calendar0"></div>
+            </div>
+            <button onclick="myFunction('Demo1')" class="accordion-button" id="btn-categorias">
+                Salas
+            </button>
+
+            <div id="Demo1" class="accordion-content">
+
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox0" class="accordion-checkbox">
+                    <label for="checkbox0" class="accordion-label">Todos</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox1" class="accordion-checkbox">
+                    <label for="checkbox1" class="accordion-label">Sala de Reunião 1</label>
+                </div>
+
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox2" class="accordion-checkbox">
+                    <label for="checkbox2" class="accordion-label">Sala de Reunião 2</label>
+                </div>
+
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox3" class="accordion-checkbox">
+                    <label for="checkbox3" class="accordion-label">Sala de Reunião 3</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox4" class="accordion-checkbox">
+                    <label for="checkbox4" class="accordion-label">Sala de Reunião 4</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox5" class="accordion-checkbox">
+                    <label for="checkbox5" class="accordion-label">Átrio</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox6" class="accordion-checkbox">
+                    <label for="checkbox6" class="accordion-label">Biblioteca</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox7" class="accordion-checkbox">
+                    <label for="checkbox7" class="accordion-label">Sala Maker</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox8" class="accordion-checkbox">
+                    <label for="checkbox8" class="accordion-label">Sala 1S</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox9" class="accordion-checkbox">
+                    <label for="checkbox9" class="accordion-label">Sala 2S</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox10" class="accordion-checkbox">
+                    <label for="checkbox10" class="accordion-label">Sala 3S</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox11" class="accordion-checkbox">
+                    <label for="checkbox11" class="accordion-label">Sala 4S</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox12" class="accordion-checkbox">
+                    <label for="checkbox12" class="accordion-label">Sala 5S</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox13" class="accordion-checkbox">
+                    <label for="checkbox13" class="accordion-label">Sala 10</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox14" class="accordion-checkbox">
+                    <label for="checkbox14" class="accordion-label">Sala 11</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox15" class="accordion-checkbox">
+                    <label for="checkbox15" class="accordion-label">Sala 12</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox16" class="accordion-checkbox">
+                    <label for="checkbox16" class="accordion-label">Sala 13</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox17" class="accordion-checkbox">
+                    <label for="checkbox17" class="accordion-label">Sala 14</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox18" class="accordion-checkbox">
+                    <label for="checkbox18" class="accordion-label">Sala 15</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox19" class="accordion-checkbox">
+                    <label for="checkbox19" class="accordion-label">Sala 16</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox20" class="accordion-checkbox">
+                    <label for="checkbox20" class="accordion-label">Sala 17</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox21" class="accordion-checkbox">
+                    <label for="checkbox21" class="accordion-label">Sala 18</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox22" class="accordion-checkbox">
+                    <label for="checkbox22" class="accordion-label">Sala 19</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox23" class="accordion-checkbox">
+                    <label for="checkbox23" class="accordion-label">Sala 20</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox24" class="accordion-checkbox">
+                    <label for="checkbox24" class="accordion-label">Sala 21</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox25" class="accordion-checkbox">
+                    <label for="checkbox25" class="accordion-label">Sala 22</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox26" class="accordion-checkbox">
+                    <label for="checkbox26" class="accordion-label">Sala 23</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox27" class="accordion-checkbox">
+                    <label for="checkbox27" class="accordion-label">Sala 24</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox28" class="accordion-checkbox">
+                    <label for="checkbox28" class="accordion-label">Sala 25</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox29" class="accordion-checkbox">
+                    <label for="checkbox29" class="accordion-label">Sala 26</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox30" class="accordion-checkbox">
+                    <label for="checkbox30" class="accordion-label">Sala 27</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox31" class="accordion-checkbox">
+                    <label for="checkbox31" class="accordion-label">Sala 28</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox32" class="accordion-checkbox">
+                    <label for="checkbox32" class="accordion-label">Sala 29</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox33" class="accordion-checkbox">
+                    <label for="checkbox33" class="accordion-label">Sala 30</label>
+                </div>
+
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox34" class="accordion-checkbox">
+                    <label for="checkbox34" class="accordion-label">Sala 31</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox35" class="accordion-checkbox">
+                    <label for="checkbox35" class="accordion-label">Sala 32</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox36" class="accordion-checkbox">
+                    <label for="checkbox36" class="accordion-label">Sala 33</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox37" class="accordion-checkbox">
+                    <label for="checkbox37" class="accordion-label">Sala 34</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox38" class="accordion-checkbox">
+                    <label for="checkbox38" class="accordion-label">Sala 35</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox39" class="accordion-checkbox">
+                    <label for="checkbox39" class="accordion-label">Sala 36</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox40" class="accordion-checkbox">
+                    <label for="checkbox40" class="accordion-label">Sala 37</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox41" class="accordion-checkbox">
+                    <label for="checkbox41" class="accordion-label">Sala 38</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox42" class="accordion-checkbox">
+                    <label for="checkbox42" class="accordion-label">Sala 39</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox43" class="accordion-checkbox">
+                    <label for="checkbox43" class="accordion-label">Sala 40</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox44" class="accordion-checkbox">
+                    <label for="checkbox44" class="accordion-label">Sala 41</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox45" class="accordion-checkbox">
+                    <label for="checkbox45" class="accordion-label">Sala 42</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox46" class="accordion-checkbox">
+                    <label for="checkbox46" class="accordion-label">Sala 43</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox47" class="accordion-checkbox">
+                    <label for="checkbox47" class="accordion-label">Sala 44</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox48" class="accordion-checkbox">
+                    <label for="checkbox48" class="accordion-label">Sala 45</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox49" class="accordion-checkbox">
+                    <label for="checkbox49" class="accordion-label">Sala 46</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox50" class="accordion-checkbox">
+                    <label for="checkbox50" class="accordion-label">Sala 47</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox51" class="accordion-checkbox">
+                    <label for="checkbox51" class="accordion-label">Sala 48</label>
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" id="checkbox52" class="accordion-checkbox">
+                    <label for="checkbox52" class="accordion-label">Sala 49</label>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <section class="filter">
+
+                <p>Filtrar por Docente</p>
+                <select id="course-select">
+                    <option value="">Luana</option>
+                    <option value="">Celso</option>
+                    <option value="">Regina</option>
+                    <option value="">Eduardo</option>
+                    <option value="">Michael</option>
+                    <option value="">Sirde</option>
+                    <option value="">Fernando</option>
+                    <option value="">Júlio</option>
+                    <option value="">Carlos</option>
+                    <option value="">Pedro </option>
+                    <option value="">Eric</option>
+                    <option value="">Andrezza</option>
+                    <option value="">Guilherme</option>
+                    <option value="">Kaue</option>
+                    <option value="">Paulo</option>
+                    <option value="">Roberto</option>
+                    <option value="">Levi</option>
+                    <option value="">Bruno</option>
+                    <option value="">Fagner </option>
+                    <option value="">Aécio</option>
+
+                </select>
+            </section>
+            <section class="filter">
+
+                <p>Filtrar por Cursos</p>
+                <select id="course-select">
+                    <option value="">HABILITAÇÃO PROFISSIONAL TÉCNICA EM ADMINISTRAÇÃO</option>
+                    <option value="">FERRAMENTAS DE PLANEJAMENTO E GESTÃO EMPRESARIAL</option>
+                    <option value="">GERENCIAMENTO DO TEMPO</option>
+                    <option value="">PLANO DE NEGÓCIOS NA PRÁTICA</option>
+                    <option value="">GESTÃO DA QUALIDADE EM PROCESSOS</option>
+                    <option value="">HABILITAÇÃO PROFISSIONAL TÉCNICA EM FINANÇAS</option>
+                    <option value="">ESCRITURAÇÃO FISCAL</option>
+                    <option value="">ADMINISTRAÇÃO DE CONTAS A PAGAR RECEBER E TESOURARIA</option>
+                    <option value="">ANALISTA DE CRÉDITO </option>
+                    <option value="">GESTÃO TRIBUTÁRIA - PLANEJAMENTO TRIBUTÁRIO</option>
+                    <option value="">FINANÇAS PARA NÃO FINANCEIROS</option>
+                    <option value="">ADMINISTRAÇÃO DE CONTAS A PAGAR RECEBER E TESOURARIA</option>
+                    <option value="">NOÇÕES DE CONTABILIDADE PARA NÃO CONTADORES</option>
+                    <option value="">ANALISTA FISCAL</option>
+                    <option value="">ASSISTENTE FISCAL</option>
+                    <option value="">ANÁLISE E PLANEJAMENTO FINANCEIRO </option>
+                    <option value="">HABILITAÇÃO PROFISSIONAL TÉCNICA EM RECURSOS HUMANOS</option>
+                    <option value="">ASSISTENTE DE PESSOAL</option>
+                    <option value="">FORMAÇÃO DE ANALISTA DE TREINAMENTO E DESENVOLVIMENTO </option>
+                    <option value="">COMUNICAÇÃO E FEEDBACK EFICAZ</option>
+                    <option value="">COMUNICAÇÃO ASSERTIVA NAS ORGANIZAÇÕES</option>
+                    <option value="">DINÂMICAS DE GRUPO COM FOCO EM COMPETÊNCIAS</option>
+                    <option value="">GESTÃO DE CONFLITOS NAS ORGANIZAÇÕES</option>
+                    <option value="">RH ÁGIL: INOVAÇÃO PARA A GESTÃO ESTRATÉGICA DE PESSOAS</option>
+                    <option value="">FERRAMENTAS PARA LIDERANÇA</option>
+                    <option value="">DENVOLVIMENTO DE LIDERANÇA: POTENCIALIZAÇÃO DE HABILIDADES E ATITUDE</option>
+                    <option value="">LIDERANÇA SITUACIONAL</option>
+                    <option value="">GESTÃO DE CARGOS E SALÁRIOS</option>
+                    <option value="">INTRODUÇÃO À ADMINISTRAÇÃO DE PESSOAL</option>
+                    <option value="">HABILITAÇÃO PROFISSIONAL TÉCNICA EM LOGÍSTICA</option>
+                    <option value="">COMPRAS E ADMINISTRAÇÃO DE MATERIAIS</option>
+                    <option value="">GESTÃO DA LOGÍSTICA NO E-COMMERCE</option>
+                    <option value="">MARKETING: FERRAMENTAS, MODELOS E ESTRATÉGIAS PARA A INOVAÇÃO</option>
+                    <option value="">INBOUND MARKETING</option>
+                    <option value="">HABILITAÇÃO PROFISSIONAL TÉCNICA EM MARKETING</option>
+                    <option value="">E-COMMERCE: PLANEJAMENTO DE NEGÓCIOS DIGITAIS</option>
+                    <option value="">COMO VENDER NAS REDES SOCIAIS: SOCIAL COMMERCE </option>
+                    <option value="">TÉCNICAS DE NEGOCIAÇÃO</option>
+                    <option value="">TÉCNICAS DE PITCH: COMO CRIAR APRESENTAÇÕES DE IMPACTO</option>
+                    <option value="">VENDENDO MAIS E MELHOR NO VAREJO</option>
+                    <option value="">PROSPECÇÃO DE CLIENTES: IDENTIFIQUE SEUS CLIENTES POTENCIAIS</option>
+                    <option value="">INTELIGÊNCIA EMOCIONAL EM VENDAS</option>
+                    <option value="">GESTÃO DO PROCESSO DE VENDAS DO COMÉRCIO ELETRÔNICO</option>
+                    <option value="">PORTEIRO E VIGIA (ZANCONE)</option>
+                    <option value="">AUTOCAD - PROJETOS EM 2D</option>
+                    <option value="">BLENDER 3D - BÁSICO: MODELAGEM, ILUMINAÇÃO E RENDER</option>
+                    <option value="">BIM - REVIT ESSENCIAL</option>
+                    <option value="">SKETCHUP PRO</option>
+                    <option value="">PHOTOSHOP - TRATAMENTO DE IMAGEM</option>
+                    <option value="">PHOTOSHOP PARA MÍDIAS SOCIAIS</option>
+                    <option value="">PROMOB - CRIAÇÃO DE PROJETOS 3D</option>
+                    <option value="">INDESIGN - EDITORAÇÃO ELETRÔNICA</option>
+                    <option value="">EDIÇÃO DE VÍDEO II: ADOBE AFTER EFFECTS (MOTION E VFX) </option>
+                    <option value="">3DS MAX - RIGGING PARA PERSONAGEM CARTOON</option>
+                    <option value="">EDIÇÃO DE VÍDEO I: ADOBE PREMIERE</option>
+                    <option value="">V-RAY ESSENCIAL PARA SKETCHUP</option>
+                    <option value="">AUTOCAD - MODELANDO EM 3D</option>
+                    <option value="">BIM - REVIT AVANÇADO</option>
+                    <option value="">COMUNICAÇÃO E FEEDBACK EFICAZ</option>
+                    <option value="">3DS MAX E V-RAY - REALIDADE VIRTUAL</option>
+                    <option value="">ADOBE RUSH: EDIÇÃO DE VÍDEOS PARA MÍDIAS SOCIAISZ</option>
+                    <option value="">PHOTOSHOP E CORELDRAW: TRATAMENTO DE IMAGEM E ILUSTRAÇÃO DIGITAL</option>
+                    <option value="">3DS MAX - INTRODUÇÃO E MODELAGEM</option>
+                    <option value="">GENERALISTA 3D: PINTURA DIGITAL COM ADOBE SUBSTANCE PAINTER</option>
+                    <option value="">HABILITAÇÃO PROFISSIONAL TÉCNICA EM COMPUTAÇÃO GRÁFICA</option>
+                    <option value="">ILUSTRAÇÃO DIGITAL 3D</option>
+                    <option value="">GENERALISTA 3D - MODELAGEM</option>
+                    <option value="">ILLUSTRATOR - ILUSTRAÇÃO DIGITAL</option>
+                    <option value="">BIM COM SKETCHUP</option>
+                    <option value="">PHOTOSHOP E ILLUSTRATOR - TRATAMENTO DE IMAGEM E ILUSTRAÇÃO DIGITAL</option>
+                    <option value="">ILUSTRAÇÃO DIGITAL 2D</option>
+
+                    <option value="">TÉCNICO EM INFORMÁTICA PARA INTERNET</option>
+                    <option value="">DESENVOLVEDOR WEB FRONT: END 1 - HTML E CSS</option>
+                    <option value="">INTRODUÇÃO À LINGUAGEM JAVA</option>
+                    <option value="">DESENVOLVIMENTO DE SOLUÇÕES DE DADOS NA NUVEM</option>
+                    <option value="">PHP COM MYSQL</option>
+                    <option value="">DESENVOLVIMENTO DE SOLUÇÕES PARA O MICROSOFT AZURE </option>
+                    <option value="">USER INTERFACE & INTERACTION - DESIGN DE INTERAÇÕES E INTERFACES</option>
+                    <option value="">PROGRAMAÇÃO EM C#</option>
+                    <option value="">DESENVOLVEDOR FRONT END MOBILE</option>
+                    <option value="">ANGULAR: INTERFACES FRONT-END</option>
+                    <option value="">ASSOCIATE CLOUD ENGINEER POWERED BY GOOGLE CLOUD</option>
+                    <option value="">WORDPRESS I: CRIAÇÃO E GERENCIAMENTO DE SITES</option>
+                    <option value="">LÓGICA DE PROGRAMAÇÃO</option>
+                    <option value="">PROGRAMADOR WEB</option>
+                    <option value="">CIENTISTA DE DADOS COM AZURE</option>
+                    <option value="">BANCO DE DADOS PARA WEB</option>
+                    <option value="">DESENVOLVEDOR WEB FRONT: END1 - HTML E CSS</option>
+                    <option value="">LÓGICA DE PROGRAMAÇÃO DIRECIONADA A PHP</option>
+                    <option value="">REACTJS: INTERFACES FRONT-END</option>
+                    <option value="">PROGRAMAÇÃO COM ARDUINO</option>
+                    <option value="">CRIANDO APLICATIVOS COM FLUTTER</option>
+                    <option value="">DESENVOLVEDOR WEB BACK-END: NODE.JS</option>
+                    <option value="">FORMAÇÃO FRONT-END </option>
+                    <option value="">ADOBE XD: PROTÓTIPOS PARA INTERFACE WEB E MOBILE</option>
+                    <option value="">PYTHON I: FUNDAMENTOS</option>
+                    <option value="">DESENVOLVEDOR WEB FRONT: END 2 - JAVASCRIPT</option>
+                    <option value="">PYTHON II: DESENVOLVENDO APLICAÇÕES WEB</option>
+                    <option value="">INTRODUÇÃO À PRÁTICA DA PROGRAMAÇÃO</option>
+                    <option value="">Desenvolvedor de Games</option>
+                    <option value="">TÉCNICO EM INTERNET DAS COISAS</option>
+                    <option value="">Formação Cisco</option>
+                    <option value="">MANUTENÇAO DE MICROCOMPUTADORES E IMPLANTAÇÃO DE REDE LOCAL</option>
+                    <option value="">MANUTENÇAO DE MICROCOMPUTADORES</option>
+                    <option value="">Técnico em Informática </option>
+                    <option value="">Técnico em Redes de Computadores</option>
+                    <option value="">Técnico em Manutenção e Suporte</option>
+                    <option value="">DATA CABLING SYSTEM</option>
+                    <option value="">Furukawa Cerified Profissional </option>
+                    <option value="">Automação Residencial </option>
+                    <option value="">DESENVOLVIMENTO DE SISTEMAS PARA DESKTOP COM VISUAL STUDIO </option>
+                    <option value="">LINUX ESSENTIALS </option>
+                    <option value="">IMPLANTAÇÃO DE REDE LOCAL </option>
+                    <option value="">ADMINISTRAÇÃO DO WINDOWS SERVER 2019 </option>
+                    <option value="">GERENCIAMNETO DE REDES COM WINDOWS SERVER </option>
+                    <option value="">ESTRATÉGIAS DE MARKETING DIGITAL PARA E-COMMERCE </option>
+
+                </select>
+            </section>
+            <section class="filter">
+
+                <p>Filtrar por Subareas</p>
+                <select id="course-select">
+                    <option value="">Arquitetura e Urbanismo</option>
+                    <option value="">Administração </option>
+                    <option value="">Finanças e Contabilidade </option>
+                    <option value="">Gestão de Pessoas e Liderança</option>
+                    <option value="">Logistica</option>
+                    <option value="">Marketing</option>
+                    <option value="">Vendas</option>
+                    <option value="">Segurança e Saúde no Trabalho</option>
+                    <option value="">Aplicativos</option>
+                    <option value="">Computação Gráfica e Internet</option>
+                    <option value="">Games </option>
+                    <option value="">Gestão em Tecnologia da informação e Des. de Sistema</option>
+                    <option value="">Redes e Infraestrutura</option>
+                    <option value="">EMED</option>
+                    <option value="">PROA</option>
+                    <option value="">EAD</option>
+                    <option value="">Aprendizagem</option>
+
+                </select>
+            </section>
+            <p>Filtrar por Siglas</p>
+            <select id="course-select">
+                <option value="">ADM09</option>
+                <option value="">ADM10 </option>
+                <option value="">ADM11 </option>
+                <option value="">ADM12</option>
+                <option value="">ADM13</option>
+                <option value="">ADM14</option>
+                <option value="">ADM15</option>
+                <option value="">ADM16</option>
+                <option value="">FPGE01</option>
+                <option value="">FPGE02</option>
+                <option value="">GDT01 </option>
+                <option value="">PNP01</option>
+                <option value="">GQP01</option>
+                <option value="">FIN02</option>
+                <option value="">EF02</option>
+                <option value="">EF03</option>
+                <option value="">ACPRT02</option>
+                <option value="">ACRED01</option>
+                <option value="">ACRED02 </option>
+                <option value="">GTO1</option>
+                <option value="">FNF02</option>
+                <option value="">FNF03</option>
+                <option value="">ACPRT03</option>
+                <option value="">NCNC01</option>
+                <option value="">ANF01</option>
+                <option value="">AF03</option>
+                <option value="">APF01</option>
+                <option value="">RH04</option>
+                <option value="">RH05</option>
+                <option value="">RH06</option>
+                <option value="">RH07</option>
+                <option value="">RH08</option>
+                <option value="">RH </option>
+                <option value="">AP01</option>
+                <option value="">FATD01</option>
+                <option value="">CFE01</option>
+                <option value="">CAO01</option>
+                <option value="">DGFC01</option>
+                <option value="">GCO01</option>
+                <option value="">RHA01</option>
+                <option value="">FPL01m</option>
+                <option value="">UDES</option>
+                <option value="">LS02</option>
+                <option value="">LS03</option>
+                <option value="">GCS02</option>
+                <option value="">IAP01</option>
+                <option value="">LOG05</option>
+                <option value="">LOG07</option>
+                <option value="">LOG06</option>
+                <option value="">CAM01</option>
+                <option value="">GLE01</option>
+                <option value=""> MFMEI01</option>
+                <option value="">IM02</option>
+                <option value="">MKT01</option>
+                <option value="">EPND01</option>
+                <option value="">CVRS02</option>
+                <option value="">TN01</option>
+                <option value="">TPITCH01</option>
+                <option value="">VMMV01</option>
+                <option value="">PC01</option>
+                <option value="">IE01</option>
+                <option value="">GPV01</option>
+                <option value="">TII04</option>
+                <option value="">TII05</option>
+                <option value="">TII06</option>
+                <option value="">TII07</option>
+                <option value="">TII08</option>
+                <option value="">CCNA1</option>
+                <option value="">CCNA2</option>
+                <option value="">CCNA3</option>
+                <option value="">FCP</option>
+                <option value="">EMDE01</option>
+                <option value="">RHA01 </option>
+            </select>
+            </section>
+        </div>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th> <!-- Célula vazia para a esquerda superior -->
+                    <th id="domingo">Domingo</th>
+                    <th id="segunda">Segunda-feira</th>
+                    <th id="terca">Terça-feira</th>
+                    <th id="quarta">Quarta-feira</th>
+                    <th id="quinta">Quinta-feira</th>
+                    <th id="sexta">Sexta-feira</th>
+                    <th id="sabado">Sábado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="salas" id="sala0">
+                    <th>Todos</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala1">
+                    <th>Sala de Reunião 1</th>
+                    <td id="registrar0"></td>
+                    <td id="registrar1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala2">
+                    <th>Sala de Reunião 2</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala3">
+                    <th>Sala de Reunião 3</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala4">
+                    <th>Sala de Reunião 4</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala5">
+                    <th>Átrio</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala6">
+                    <th>Biblioteca</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala7">
+                    <th>Sala Maker</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala8">
+                    <th>Sala 1S</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala9">
+                    <th>Sala 2S</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala10">
+                    <th>Sala 3S</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala11">
+                    <th>Sala 4S</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala12">
+                    <th>Sala 5S</th> <!-- Outro cabeçalho para a esquerda -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala13">
+                    <th>Sala 10</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <tr class="salas" id="sala14">
+                    <th>Sala 11</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala15">
+                    <th>Sala 12</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala16">
+                    <th>Sala 13</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala17">
+                    <th>Sala 14</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala18">
+                    <th>Sala 15</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala19">
+                    <th>Sala 16</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala20">
+                    <th>Sala 17</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala21">
+                    <th>Sala 18</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala22">
+                    <th>Sala 19</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala23">
+                    <th>Sala 20</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala24">
+                    <th>Sala 21</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala25">
+                    <th>Sala 22</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr class="salas" id="sala26">
+                    <th>Sala 23</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala27">
+                    <th>Sala 24</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala28">
+                    <th>Sala 25</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala29">
+                    <th>Sala 26</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala30">
+                    <th>Sala 27</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala31">
+                    <th>Sala 28</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala32">
+                    <th>Sala 29</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala33">
+                    <th>Sala 30</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala34">
+                    <th>Sala 31</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala35">
+                    <th>Sala 32</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala36">
+                    <th>Sala 33</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala37">
+                    <th>Sala 34</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala38">
+                    <th>Sala 35</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala39">
+                    <th>Sala 36</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala40">
+                    <th>Sala 37</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala41">
+                    <th>Sala 38</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala42">
+                    <th>Sala 39</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala43">
+                    <th>Sala 40</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala44">
+                    <th>Sala 41</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala45">
+                    <th>Sala 42</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala46">
+                    <th>Sala 43</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala47">
+                    <th>Sala 44</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala48">
+                    <th>Sala 45</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala49">
+                    <th>Sala 46</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala50">
+                    <th>Sala 47</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala51">
+                    <th>Sala 48</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="salas" id="sala52">
+                    <th>Sala 49</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        <div id="modal-reserva">
+            <div id="modal-conteudo">
+                <button id="modal-fechar">X</button>
+                <h2>Reservar Sala</h2>
+                <div id="container-grid">
+                    <div id="label-input">
+                        <p>Curso:</p>
+                        <select class="select-modal">
+                            <option value="HABILITAÇÃO PROFISSIONAL TÉCNICA EM ADMINISTRAÇÃO">HABILITAÇÃO PROFISSIONAL TÉCNICA EM ADMINISTRAÇÃO</option>
+<option value="FERRAMENTAS DE PLANEJAMENTO E GESTÃO EMPRESARIAL">FERRAMENTAS DE PLANEJAMENTO E GESTÃO EMPRESARIAL</option>
+<option value="GERENCIAMENTO DO TEMPO">GERENCIAMENTO DO TEMPO</option>
+<option value="PLANO DE NEGÓCIOS NA PRÁTICA">PLANO DE NEGÓCIOS NA PRÁTICA</option>
+<option value="GESTÃO DA QUALIDADE EM PROCESSOS">GESTÃO DA QUALIDADE EM PROCESSOS</option>
+<option value="HABILITAÇÃO PROFISSIONAL TÉCNICA EM FINANÇAS">HABILITAÇÃO PROFISSIONAL TÉCNICA EM FINANÇAS</option>
+<option value="ESCRITURAÇÃO FISCAL">ESCRITURAÇÃO FISCAL</option>
+<option value="ADMINISTRAÇÃO DE CONTAS A PAGAR RECEBER E TESOURARIA">ADMINISTRAÇÃO DE CONTAS A PAGAR RECEBER E TESOURARIA</option>
+<option value="ANALISTA DE CRÉDITO">ANALISTA DE CRÉDITO</option>
+<option value="GESTÃO TRIBUTÁRIA - PLANEJAMENTO TRIBUTÁRIO">GESTÃO TRIBUTÁRIA - PLANEJAMENTO TRIBUTÁRIO</option>
+<option value="FINANÇAS PARA NÃO FINANCEIROS">FINANÇAS PARA NÃO FINANCEIROS</option>
+<option value="ADMINISTRAÇÃO DE CONTAS A PAGAR RECEBER E TESOURARIA">ADMINISTRAÇÃO DE CONTAS A PAGAR RECEBER E TESOURARIA</option>
+<option value="NOÇÕES DE CONTABILIDADE PARA NÃO CONTADORES">NOÇÕES DE CONTABILIDADE PARA NÃO CONTADORES</option>
+<option value="ANALISTA FISCAL">ANALISTA FISCAL</option>
+<option value="ASSISTENTE FISCAL">ASSISTENTE FISCAL</option>
+<option value="ANÁLISE E PLANEJAMENTO FINANCEIRO">ANÁLISE E PLANEJAMENTO FINANCEIRO</option>
+<option value="HABILITAÇÃO PROFISSIONAL TÉCNICA EM RECURSOS HUMANOS">HABILITAÇÃO PROFISSIONAL TÉCNICA EM RECURSOS HUMANOS</option>
+<option value="ASSISTENTE DE PESSOAL">ASSISTENTE DE PESSOAL</option>
+<option value="FORMAÇÃO DE ANALISTA DE TREINAMENTO E DESENVOLVIMENTO">FORMAÇÃO DE ANALISTA DE TREINAMENTO E DESENVOLVIMENTO</option>
+<option value="COMUNICAÇÃO E FEEDBACK EFICAZ">COMUNICAÇÃO E FEEDBACK EFICAZ</option>
+<option value="COMUNICAÇÃO ASSERTIVA NAS ORGANIZAÇÕES">COMUNICAÇÃO ASSERTIVA NAS ORGANIZAÇÕES</option>
+<option value="DINÂMICAS DE GRUPO COM FOCO EM COMPETÊNCIAS">DINÂMICAS DE GRUPO COM FOCO EM COMPETÊNCIAS</option>
+<option value="GESTÃO DE CONFLITOS NAS ORGANIZAÇÕES">GESTÃO DE CONFLITOS NAS ORGANIZAÇÕES</option>
+<option value="RH ÁGIL: INOVAÇÃO PARA A GESTÃO ESTRATÉGICA DE PESSOAS">RH ÁGIL: INOVAÇÃO PARA A GESTÃO ESTRATÉGICA DE PESSOAS</option>
+<option value="FERRAMENTAS PARA LIDERANÇA">FERRAMENTAS PARA LIDERANÇA</option>
+<option value="DENVOLVIMENTO DE LIDERANÇA: POTENCIALIZAÇÃO DE HABILIDADES E ATITUDE">DENVOLVIMENTO DE LIDERANÇA: POTENCIALIZAÇÃO DE HABILIDADES E ATITUDE</option>
+<option value="LIDERANÇA SITUACIONAL">LIDERANÇA SITUACIONAL</option>
+<option value="GESTÃO DE CARGOS E SALÁRIOS">GESTÃO DE CARGOS E SALÁRIOS</option>
+<option value="INTRODUÇÃO À ADMINISTRAÇÃO DE PESSOAL">INTRODUÇÃO À ADMINISTRAÇÃO DE PESSOAL</option>
+<option value="HABILITAÇÃO PROFISSIONAL TÉCNICA EM LOGÍSTICA">HABILITAÇÃO PROFISSIONAL TÉCNICA EM LOGÍSTICA</option>
+<option value="COMPRAS E ADMINISTRAÇÃO DE MATERIAIS">COMPRAS E ADMINISTRAÇÃO DE MATERIAIS</option>
+<option value="GESTÃO DA LOGÍSTICA NO E-COMMERCE">GESTÃO DA LOGÍSTICA NO E-COMMERCE</option>
+<option value="MARKETING: FERRAMENTAS, MODELOS E ESTRATÉGIAS PARA A INOVAÇÃO">MARKETING: FERRAMENTAS, MODELOS E ESTRATÉGIAS PARA A INOVAÇÃO</option>
+<option value="INBOUND MARKETING">INBOUND MARKETING</option>
+<option value="HABILITAÇÃO PROFISSIONAL TÉCNICA EM MARKETING">HABILITAÇÃO PROFISSIONAL TÉCNICA EM MARKETING</option>
+<option value="E-COMMERCE: PLANEJAMENTO DE NEGÓCIOS DIGITAIS">E-COMMERCE: PLANEJAMENTO DE NEGÓCIOS DIGITAIS</option>
+<option value="COMO VENDER NAS REDES SOCIAIS: SOCIAL COMMERCE">COMO VENDER NAS REDES SOCIAIS: SOCIAL COMMERCE</option>
+<option value="TÉCNICAS DE NEGOCIAÇÃO">TÉCNICAS DE NEGOCIAÇÃO</option>
+<option value="TÉCNICAS DE PITCH: COMO CRIAR APRESENTAÇÕES DE IMPACTO">TÉCNICAS DE PITCH: COMO CRIAR APRESENTAÇÕES DE IMPACTO</option>
+<option value="VENDENDO MAIS E MELHOR NO VAREJO">VENDENDO MAIS E MELHOR NO VAREJO</option>
+<option value="PROSPECÇÃO DE CLIENTES: IDENTIFIQUE SEUS CLIENTES POTENCIAIS">PROSPECÇÃO DE CLIENTES: IDENTIFIQUE SEUS CLIENTES POTENCIAIS</option>
+<option value="INTELIGÊNCIA EMOCIONAL EM VENDAS">INTELIGÊNCIA EMOCIONAL EM VENDAS</option>
+<option value="GESTÃO DO PROCESSO DE VENDAS DO COMÉRCIO ELETRÔNICO">GESTÃO DO PROCESSO DE VENDAS DO COMÉRCIO ELETRÔNICO</option>
+<option value="PORTEIRO E VIGIA (ZANCONE)">PORTEIRO E VIGIA (ZANCONE)</option>
+<option value="AUTOCAD - PROJETOS EM 2D">AUTOCAD - PROJETOS EM 2D</option>
+<option value="BLENDER 3D - BÁSICO: MODELAGEM, ILUMINAÇÃO E RENDER">BLENDER 3D - BÁSICO: MODELAGEM, ILUMINAÇÃO E RENDER</option>
+<option value="BIM - REVIT ESSENCIAL">BIM - REVIT ESSENCIAL</option>
+<option value="SKETCHUP PRO">SKETCHUP PRO</option>
+<option value="PHOTOSHOP - TRATAMENTO DE IMAGEM">PHOTOSHOP - TRATAMENTO DE IMAGEM</option>
+<option value="PHOTOSHOP PARA MÍDIAS SOCIAIS">PHOTOSHOP PARA MÍDIAS SOCIAIS</option>
+<option value="PROMOB - CRIAÇÃO DE PROJETOS 3D">PROMOB - CRIAÇÃO DE PROJETOS 3D</option>
+<option value="INDESIGN - EDITORAÇÃO ELETRÔNICA">INDESIGN - EDITORAÇÃO ELETRÔNICA</option>
+<option value="EDIÇÃO DE VÍDEO II: ADOBE AFTER EFFECTS (MOTION E VFX)">EDIÇÃO DE VÍDEO II: ADOBE AFTER EFFECTS (MOTION E VFX)</option>
+<option value="3DS MAX - RIGGING PARA PERSONAGEM CARTOON">3DS MAX - RIGGING PARA PERSONAGEM CARTOON</option>
+<option value="EDIÇÃO DE VÍDEO I: ADOBE PREMIERE">EDIÇÃO DE VÍDEO I: ADOBE PREMIERE</option>
+<option value="V-RAY ESSENCIAL PARA SKETCHUP">V-RAY ESSENCIAL PARA SKETCHUP</option>
+<option value="AUTOCAD - MODELANDO EM 3D">AUTOCAD - MODELANDO EM 3D</option>
+<option value="BIM - REVIT AVANÇADO">BIM - REVIT AVANÇADO</option>
+<option value="COMUNICAÇÃO E FEEDBACK EFICAZ">COMUNICAÇÃO E FEEDBACK EFICAZ</option>
+<option value="3DS MAX E V-RAY - REALIDADE VIRTUAL">3DS MAX E V-RAY - REALIDADE VIRTUAL</option>
+<option value="ADOBE RUSH: EDIÇÃO DE VÍDEOS PARA MÍDIAS SOCIAISZ">ADOBE RUSH: EDIÇÃO DE VÍDEOS PARA MÍDIAS SOCIAISZ</option>
+<option value="PHOTOSHOP E CORELDRAW: TRATAMENTO DE IMAGEM E ILUSTRAÇÃO DIGITAL">PHOTOSHOP E CORELDRAW: TRATAMENTO DE IMAGEM E ILUSTRAÇÃO DIGITAL</option>
+<option value="3DS MAX - INTRODUÇÃO E MODELAGEM">3DS MAX - INTRODUÇÃO E MODELAGEM</option>
+<option value="GENERALISTA 3D: PINTURA DIGITAL COM ADOBE SUBSTANCE PAINTER">GENERALISTA 3D: PINTURA DIGITAL COM ADOBE SUBSTANCE PAINTER</option>
+<option value="HABILITAÇÃO PROFISSIONAL TÉCNICA EM COMPUTAÇÃO GRÁFICA">HABILITAÇÃO PROFISSIONAL TÉCNICA EM COMPUTAÇÃO GRÁFICA</option>
+<option value="ILUSTRAÇÃO DIGITAL 3D">ILUSTRAÇÃO DIGITAL 3D</option>
+<option value="GENERALISTA 3D - MODELAGEM">GENERALISTA 3D - MODELAGEM</option>
+<option value="ILLUSTRATOR - ILUSTRAÇÃO DIGITAL">ILLUSTRATOR - ILUSTRAÇÃO DIGITAL</option>
+<option value="BIM COM SKETCHUP">BIM COM SKETCHUP</option>
+<option value="PHOTOSHOP E ILLUSTRATOR - TRATAMENTO DE IMAGEM E ILUSTRAÇÃO DIGITAL">PHOTOSHOP E ILLUSTRATOR - TRATAMENTO DE IMAGEM E ILUSTRAÇÃO DIGITAL</option>
+<option value="ILUSTRAÇÃO DIGITAL 2D">ILUSTRAÇÃO DIGITAL 2D</option>
+<option value="TÉCNICO EM INFORMÁTICA PARA INTERNET">TÉCNICO EM INFORMÁTICA PARA INTERNET</option>
+<option value="DESENVOLVEDOR WEB FRONT: END 1 - HTML E CSS">DESENVOLVEDOR WEB FRONT: END 1 - HTML E CSS</option>
+<option value="INTRODUÇÃO À LINGUAGEM JAVA">INTRODUÇÃO À LINGUAGEM JAVA</option>
+<option value="DESENVOLVIMENTO DE SOLUÇÕES DE DADOS NA NUVEM">DESENVOLVIMENTO DE SOLUÇÕES DE DADOS NA NUVEM</option>
+<option value="PHP COM MYSQL">PHP COM MYSQL</option>
+<option value="DESENVOLVIMENTO DE SOLUÇÕES PARA O MICROSOFT AZURE">DESENVOLVIMENTO DE SOLUÇÕES PARA O MICROSOFT AZURE</option>
+<option value="USER INTERFACE & INTERACTION - DESIGN DE INTERAÇÕES E INTERFACES">USER INTERFACE & INTERACTION - DESIGN DE INTERAÇÕES E INTERFACES</option>
+<option value="PROGRAMAÇÃO EM C#">PROGRAMAÇÃO EM C#</option>
+<option value="DESENVOLVEDOR FRONT END MOBILE">DESENVOLVEDOR FRONT END MOBILE</option>
+<option value="ANGULAR: INTERFACES FRONT-END">ANGULAR: INTERFACES FRONT-END</option>
+<option value="ASSOCIATE CLOUD ENGINEER POWERED BY GOOGLE CLOUD">ASSOCIATE CLOUD ENGINEER POWERED BY GOOGLE CLOUD</option>
+<option value="WORDPRESS I: CRIAÇÃO E GERENCIAMENTO DE SITES">WORDPRESS I: CRIAÇÃO E GERENCIAMENTO DE SITES</option>
+<option value="LÓGICA DE PROGRAMAÇÃO">LÓGICA DE PROGRAMAÇÃO</option>
+<option value="PROGRAMADOR WEB">PROGRAMADOR WEB</option>
+<option value="CIENTISTA DE DADOS COM AZURE">CIENTISTA DE DADOS COM AZURE</option>
+<option value="BANCO DE DADOS PARA WEB">BANCO DE DADOS PARA WEB</option>
+<option value="DESENVOLVIMENTO DE SOLUÇÕES PARA DESKTOP COM VISUAL STUDIO">DESENVOLVIMENTO DE SOLUÇÕES PARA DESKTOP COM VISUAL STUDIO</option>
+<option value="LINUX ESSENTIALS">LINUX ESSENTIALS</option>
+<option value="IMPLANTAÇÃO DE REDE LOCAL">IMPLANTAÇÃO DE REDE LOCAL</option>
+<option value="ADMINISTRAÇÃO DO WINDOWS SERVER 2019">ADMINISTRAÇÃO DO WINDOWS SERVER 2019</option>
+<option value="GERENCIAMNETO DE REDES COM WINDOWS SERVER">GERENCIAMNETO DE REDES COM WINDOWS SERVER</option>
+<option value="ESTRATÉGIAS DE MARKETING DIGITAL PARA E-COMMERCE">ESTRATÉGIAS DE MARKETING DIGITAL PARA E-COMMERCE</option>
+
+                        </select>
+                    </div>
+                    <div id="label-input">
+                        <p>Subareas:</p>
+                        <select class="select-modal">
+                            <option value="Arquitetura e Urbanismo">Arquitetura e Urbanismo</option>
+<option value="Administração">Administração</option>
+<option value="Finanças e Contabilidade">Finanças e Contabilidade</option>
+<option value="Gestão de Pessoas e Liderança">Gestão de Pessoas e Liderança</option>
+<option value="Logistica">Logistica</option>
+<option value="Marketing">Marketing</option>
+<option value="Vendas">Vendas</option>
+<option value="Segurança e Saúde no Trabalho">Segurança e Saúde no Trabalho</option>
+<option value="Aplicativos">Aplicativos</option>
+<option value="Computação Gráfica e Internet">Computação Gráfica e Internet</option>
+<option value="Games">Games</option>
+<option value="Gestão em Tecnologia da informação e Des. de Sistema">Gestão em Tecnologia da informação e Des. de Sistema</option>
+<option value="Redes e Infraestrutura">Redes e Infraestrutura</option>
+<option value="EMED">EMED</option>
+<option value="PROA">PROA</option>
+<option value="EAD">EAD</option>
+<option value="Aprendizagem">Aprendizagem</option>
+
+                        </select>
+                    </div>
+
+                    <div id="label-input">
+                        <p>Sigla:</p>
+                        <select id="sigla" class="select-modal">
+                            <option value="ADM1">ADM1</option>
+                            <option value="ADM2">ADM2</option>
+                            <option value="ADM09">ADM09</option>
+                            <option value="ADM10">ADM10</option>
+                            <option value="ADM11">ADM11</option>
+                            <option value="ADM12">ADM12</option>
+                            <option value="ADM13">ADM13</option>
+                            <option value="ADM14">ADM14</option>
+                            <option value="ADM15">ADM15</option>
+                            <option value="ADM16">ADM16</option>
+                            <option value="FPGE01">FPGE01</option>
+                            <option value="FPGE02">FPGE02</option>
+                            <option value="GDT01">GDT01</option>
+                            <option value="PNP01">PNP01</option>
+                            <option value="GQP01">GQP01</option>
+                            <option value="FIN02">FIN02</option>
+                            <option value="EF02">EF02</option>
+                            <option value="EF03">EF03</option>
+                            <option value="ACPRT02">ACPRT02</option>
+                            <option value="ACRED01">ACRED01</option>
+                            <option value="ACRED02">ACRED02</option>
+                            <option value="GTO1">GTO1</option>
+                            <option value="FNF02">FNF02</option>
+                            <option value="FNF03">FNF03</option>
+                            <option value="ACPRT03">ACPRT03</option>
+                            <option value="NCNC01">NCNC01</option>
+                            <option value="ANF01">ANF01</option>
+                            <option value="AF03">AF03</option>
+                            <option value="APF01">APF01</option>
+                            <option value="RH04">RH04</option>
+                            <option value="RH05">RH05</option>
+                            <option value="RH06">RH06</option>
+                            <option value="RH07">RH07</option>
+                            <option value="RH08">RH08</option>
+                            <option value="RH">RH</option>
+                            <option value="AP01">AP01</option>
+                            <option value="FATD01">FATD01</option>
+                            <option value="CFE01">CFE01</option>
+                            <option value="CAO01">CAO01</option>
+                            <option value="DGFC01">DGFC01</option>
+                            <option value="GCO01">GCO01</option>
+                            <option value="RHA01">RHA01</option>
+                            <option value="FPL01m">FPL01m</option>
+                            <option value="UDES">UDES</option>
+                            <option value="LS02">LS02</option>
+                            <option value="LS03">LS03</option>
+                            <option value="GCS02">GCS02</option>
+                            <option value="IAP01">IAP01</option>
+                            <option value="LOG05">LOG05</option>
+                            <option value="LOG07">LOG07</option>
+                            <option value="LOG06">LOG06</option>
+                            <option value="CAM01">CAM01</option>
+                            <option value="GLE01">GLE01</option>
+                            <option value="MFMEI01">MFMEI01</option>
+                            <option value="IM02">IM02</option>
+                            <option value="MKT01">MKT01</option>
+                            <option value="EPND01">EPND01</option>
+                            <option value="CVRS02">CVRS02</option>
+                            <option value="TN01">TN01</option>
+                            <option value="TPITCH01">TPITCH01</option>
+                            <option value="VMMV01">VMMV01</option>
+                            <option value="PC01">PC01</option>
+                            <option value="IE01">IE01</option>
+                            <option value="GPV01">GPV01</option>
+                            <option value="TII04">TII04</option>
+                            <option value="TII05">TII05</option>
+                            <option value="TII06">TII06</option>
+                            <option value="TII07">TII07</option>
+                            <option value="TII08">TII08</option>
+                            <option value="CCNA1">CCNA1</option>
+                            <option value="CCNA2">CCNA2</option>
+                            <option value="CCNA3">CCNA3</option>
+                            <option value="FCP">FCP</option>
+                            <option value="EMDE01">EMDE01</option>
+                            <option value="RHA01">RHA01</option>
+
+                        </select>
+                    </div>
+                    <div id="label-input">
+                        <p>Cód. Turma:</p>
+                        <input id="cod-turma" type="text" value=""></option>
+                    </div>
+
+                    <div id="label-input">
+                        <p>Horario Inicio ao Fim:</p>
+                        <input id="horario" type="text" value=""></input>
+                    </div>
+
+                    <div id="label-input">
+                        <p>Docente:</p>
+                        <select id="docente" class="select-modal">
+                            <option value=""></option>
+                            <option value="Luana">Luana</option>
+                            <option value="Aécio">Aécio</option>
+                            <option value="Celso">Celso</option>
+                            <option value="Regina">Regina</option>
+                            <option value="Eduardo">Eduardo</option>
+                            <option value="Michael">Michael</option>
+                            <option value="Sirde">Sirde</option>
+                            <option value="Fernando">Fernando</option>
+                            <option value="Júlio">Júlio</option>
+                            <option value="Carlos">Carlos</option>
+                            <option value="Pedro">Pedro</option>
+                            <option value="Eric">Eric</option>
+                            <option value="Andrezza">Andrezza</option>
+                            <option value="Guilherme">Guilherme</option>
+                            <option value="Kaue">Kaue</option>
+                            <option value="Paulo">Paulo</option>
+                            <option value="Roberto">Roberto</option>
+                            <option value="Levi">Levi</option>
+                            <option value="Bruno">Bruno</option>
+                            <option value="Fagner">Fagner</option>
+                        </select>
+                    </div>
+                    <div id="label-input">
+                        <p>Data de Inicio:</p>
+                        <input id="date" type="date" value="">
+                    </div>
+                    <div id="label-input">
+                        <p>Data do Fim:</p>
+                        <input id="date" type="date" value="">
+                    </div>
+
+                </div>
+                <button id="botao-reservar">Reservar</button>
+            </div>
+        </div>
+
+
+    
+
+
+
+        </div>
+        </div>
+        <div id="teste-modal">
+            <div id="fundo-modal">
+                <div id="teste-login">
+                    <img src="/assets/logo_senac_default.png">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" value="">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" value="">
+                    <button id="btnlogin">Login</button>
+                </div>
+            </div>
+        </div>
+        <!--Modal Exlcuir-->
+        <div id="modal-excluir">
+            <div id="container-excluir">
+                <button id="fechar-modalExcluir">X</button>
+                <h2>Deletar uma Reserva</h2>
+                <div id="form-excluir">
+                   <p>Curso(Sigla)</p>
+                   <p>Docente</p>
+                    <p>Data</p>
+                </div>
+                <div id="resultado-form">
+                    <select id="sigla" class="select-modal">
+                        <option value="ADM1">ADM1</option>
+                        <option value="ADM2">ADM2</option>
+                        <option value="ADM09">ADM09</option>
+                        <option value="ADM10">ADM10</option>
+                        <option value="ADM11">ADM11</option>
+                        <option value="ADM12">ADM12</option>
+                        <option value="ADM13">ADM13</option>
+                        <option value="ADM14">ADM14</option>
+                        <option value="ADM15">ADM15</option>
+                        <option value="ADM16">ADM16</option>
+                        <option value="FPGE01">FPGE01</option>
+                        <option value="FPGE02">FPGE02</option>
+                        <option value="GDT01">GDT01</option>
+                        <option value="PNP01">PNP01</option>
+                        <option value="GQP01">GQP01</option>
+                        <option value="FIN02">FIN02</option>
+                        <option value="EF02">EF02</option>
+                        <option value="EF03">EF03</option>
+                        <option value="ACPRT02">ACPRT02</option>
+                        <option value="ACRED01">ACRED01</option>
+                        <option value="ACRED02">ACRED02</option>
+                        <option value="GTO1">GTO1</option>
+                        <option value="FNF02">FNF02</option>
+                        <option value="FNF03">FNF03</option>
+                        <option value="ACPRT03">ACPRT03</option>
+                        <option value="NCNC01">NCNC01</option>
+                        <option value="ANF01">ANF01</option>
+                        <option value="AF03">AF03</option>
+                        <option value="APF01">APF01</option>
+                        <option value="RH04">RH04</option>
+                        <option value="RH05">RH05</option>
+                        <option value="RH06">RH06</option>
+                        <option value="RH07">RH07</option>
+                        <option value="RH08">RH08</option>
+                        <option value="RH">RH</option>
+                        <option value="AP01">AP01</option>
+                        <option value="FATD01">FATD01</option>
+                        <option value="CFE01">CFE01</option>
+                        <option value="CAO01">CAO01</option>
+                        <option value="DGFC01">DGFC01</option>
+                        <option value="GCO01">GCO01</option>
+                        <option value="RHA01">RHA01</option>
+                        <option value="FPL01m">FPL01m</option>
+                        <option value="UDES">UDES</option>
+                        <option value="LS02">LS02</option>
+                        <option value="LS03">LS03</option>
+                        <option value="GCS02">GCS02</option>
+                        <option value="IAP01">IAP01</option>
+                        <option value="LOG05">LOG05</option>
+                        <option value="LOG07">LOG07</option>
+                        <option value="LOG06">LOG06</option>
+                        <option value="CAM01">CAM01</option>
+                        <option value="GLE01">GLE01</option>
+                        <option value="MFMEI01">MFMEI01</option>
+                        <option value="IM02">IM02</option>
+                        <option value="MKT01">MKT01</option>
+                        <option value="EPND01">EPND01</option>
+                        <option value="CVRS02">CVRS02</option>
+                        <option value="TN01">TN01</option>
+                        <option value="TPITCH01">TPITCH01</option>
+                        <option value="VMMV01">VMMV01</option>
+                        <option value="PC01">PC01</option>
+                        <option value="IE01">IE01</option>
+                        <option value="GPV01">GPV01</option>
+                        <option value="TII04">TII04</option>
+                        <option value="TII05">TII05</option>
+                        <option value="TII06">TII06</option>
+                        <option value="TII07">TII07</option>
+                        <option value="TII08">TII08</option>
+                        <option value="CCNA1">CCNA1</option>
+                        <option value="CCNA2">CCNA2</option>
+                        <option value="CCNA3">CCNA3</option>
+                        <option value="FCP">FCP</option>
+                        <option value="EMDE01">EMDE01</option>
+                        <option value="RHA01">RHA01</option>
+
+                    </select>
+                    <select id="docente" class="select-modal">
+                        <option value=""></option>
+                        <option value="Luana">Luana</option>
+                        <option value="Aécio">Aécio</option>
+                        <option value="Celso">Celso</option>
+                        <option value="Regina">Regina</option>
+                        <option value="Eduardo">Eduardo</option>
+                        <option value="Michael">Michael</option>
+                        <option value="Sirde">Sirde</option>
+                        <option value="Fernando">Fernando</option>
+                        <option value="Júlio">Júlio</option>
+                        <option value="Carlos">Carlos</option>
+                        <option value="Pedro">Pedro</option>
+                        <option value="Eric">Eric</option>
+                        <option value="Andrezza">Andrezza</option>
+                        <option value="Guilherme">Guilherme</option>
+                        <option value="Kaue">Kaue</option>
+                        <option value="Paulo">Paulo</option>
+                        <option value="Roberto">Roberto</option>
+                        <option value="Levi">Levi</option>
+                        <option value="Bruno">Bruno</option>
+                        <option value="Fagner">Fagner</option>
+                    </select>
+                    <input id="date" type="date" value="">
+                </div>
+                <button id="excluir-modal">Excluir</button>
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+    <script src="script.js"></script>
+
+</body>

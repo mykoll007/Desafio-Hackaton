@@ -1,0 +1,539 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html{
+
+
+    --body-color:#FFFCFF ;
+  
+    --header-color:#d36c6c;
+  
+    --header-button:#92a1d1;
+  
+    --color-weekdays: #247BA0;
+    
+    --box-shadow: #CBD4C2;
+  
+    --hover: #e8faed;
+  
+    --current-day:#e8f4fa;
+  
+    --event-color: #58bae4;
+  
+    --modal-event: #e8f4fa;
+  
+  
+   --color-day:white;
+    margin: 0;
+  
+  }
+
+
+body{
+
+    /* background-color: black; */
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 5px;
+}
+p{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #004a8c;
+}
+header{
+    display: flex;
+    box-shadow: 0 1px 4px 0 #e9e9e9;
+    justify-content: space-between;
+}
+#lado-esquerdo{
+    width: 317px;
+    border: 1px solid;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+}
+#menu{
+    width: 141px;
+    height: 75px;
+    display: flex;
+    padding-left: 4px;
+    margin-top: 0px;
+}
+#menu img{
+    margin-top: 5px;
+    width: 73px;
+    height: 50px;
+}
+#menu span img{
+    height: 54px;
+    width: 57px;
+    padding-left: 11px;
+    margin-top: 11px;
+}
+#hoje{
+    width: 70px;
+    height: 40px;
+    border: 1px solid;
+    text-align: center;
+    margin-left: 25px;
+    margin-top: 20px;
+    border-radius: 7px;
+    border-color: black;
+}
+#hoje p{
+    margin: 0;
+    padding-top: 10px;
+}
+#hoje a{
+    text-decoration: none;
+}
+#seta1, #seta1 img{
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 17px;
+}
+#seta2, #seta2 img{
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 17px;
+}
+#maio{
+    font-size: 23px;
+    height: 29px;
+    margin-left: 30px;
+}
+#nav-direito{
+    display: flex;
+    margin-top: 15px;
+}
+#nav-direito img{
+    height: 45px;
+    margin-left: 12px;
+}
+#seta-down{
+    position: relative;
+    right: 14px;
+}
+#course-select{
+    width: 306px;
+    margin-bottom: 8px;
+    color: #004a8c;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.btn-alterar{
+  margin-top: 11px;
+  background-color: #004A8C;
+  width: 97px;
+  height: 55px;
+}
+#excluir{
+  background-color: red;
+}
+main{
+    display: flex;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+ 
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #004A8C;
+  display: block;
+  transition: 0.3s;
+}
+ 
+.sidenav a:hover {
+  color: #FF9057;
+}
+ 
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#teste-modal{
+ display: block;
+}
+#abrirLogin{
+  display: none;
+
+}
+#abrirLogin button{
+  width: 186px;
+  color: #004a8c;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  padding: 0px;
+  height: 32px;
+  margin-bottom: 14px;
+  margin-right: 12px;
+}
+
+#modal-excluir{
+  display: block;
+  width: 70%;
+    max-width: 800px;
+    max-height: 509px;
+    border: 1px solid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#teste{
+  position: fixed;
+}
+
+
+
+
+
+button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+#header {
+    padding: 6px 0;
+    color: var(--header-color);
+    font-size: 26px;
+    font-family: sans-serif;
+    text-align: center;}
+  #header button {
+    background-color:var(--header-button);
+  }
+  #monthDisplay{
+    font-size: 18px;
+      color: blue;
+  }
+  #container {
+    width: 306px;
+    height: 320px;
+    margin-left: 9px;
+  }
+  #weekdays {
+      margin-left: 3px;
+      padding-right: 0px;
+      text-align: center;
+      font-size: -22px;
+      justify-content: space-around;
+      width: 290px;
+      display: flex;
+      color: var(--color-weekdays);
+  }
+  
+  #weekdays div {
+    width: 27px;
+    font-size: 18px;
+  }
+  #calendar0 {
+    width: 302px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 231px;
+  }
+  .day {
+    width: 12px;
+    padding: 10px;
+    font-size: 15px;
+    height: 9px;
+    cursor: pointer;
+    background-color: var(--color-day);
+    margin: 5px;
+    box-shadow: 0px 0px 3px var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15%;
+  }
+  .day:hover {
+    background-color: var(--hover);
+  }
+  
+  .day + #currentDay {
+    background-color:var(--current-day);
+  }
+  .day-week {
+    padding: 10px;
+    border: 1px solid #ccc;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .day-week:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .event {
+    font-size: 10px;
+    padding: 3px;
+    background-color: var(--event-color);
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+  }
+  .padding {
+    cursor: default !important;
+    background-color: var(--body-color) !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  .accordion-content.w3-show {
+    max-height: 100%; /* Adjust as needed */
+  }
+  
+  
+  .accordion-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Styling the label to look like a button */
+  .accordion-label {
+    padding-top: 11px;
+    cursor: pointer;
+  }
+  
+  .accordion-checkbox{
+    height: 37px;
+    width: 21px;
+  }
+  #btn-categorias{
+    margin-top: 16px;
+    width: 306px;
+    margin-bottom: 8px;
+    color: #004a8c;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+  .div-checkbox{
+    display: flex;
+  }
+  
+  #week-calendar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  #fundo-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Aqui o último valor (0.5) define a transparência */
+    z-index: 999; /* Coloque um valor menor que o z-index do seu modal para que o fundo fique atrás dele */
+  }
+  #teste-login{
+    border: 1px solid;
+    width: 500px;
+    height: 438px;
+    max-width: 70%;
+    max-height: 70%;
+    position: fixed;
+    left: 700px;
+    z-index: 1000;
+    background-color: white;
+    display: grid;
+    border-radius: 9px;
+    margin-top: 100px;
+  }
+  #teste-login img{
+    width: 140px;
+    margin-top: 17px;
+    margin-left: 184px;
+  }
+  #teste-login label{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #004a8c;
+    margin-left: 81px;
+  }
+  #teste-login input{
+    width: 70%;
+    margin-left: 78px;
+    height: 45px;
+    border: 1px solid;
+    border-radius: 15px;
+  }
+  #teste-login button{
+    margin-left: 202px;
+    background-color: #004A8C;
+    height: 47px;
+  }
+  #btnlogin {
+    background-color: #004A8C;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    border-radius: 5px;
+  }
+   
+  #btnlogin:hover {
+    opacity: 0.8;
+    background-color: #FF9057;
+  }
+  
+  table {
+    height: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+thead {
+    background-color: #f2f2f2;
+}
+.salas{
+  display: none;
+}
+
+#modal-reserva{
+  display: none;
+}
+
+#modal-conteudo{
+  width: 70%;
+  max-width: 800px;
+  max-height: 509px;
+  border: 1px solid;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#modal-fechar{
+  background-color: blue;
+  margin-left: 606px;
+}
+#container-grid{
+display: ruby;
+}
+
+#label-input{
+  width: 300px;
+    height: 88px;
+    
+}
+#label-input p{
+  margin: 0;
+  width: 135px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  
+
+}
+
+#label-input select{
+  width: 292px;
+    height: 47px;
+    border-radius: 11px;
+}
+#label-input select option{
+  text-align: center;
+}
+
+#label-input #date{
+  width: 284px;
+  border-radius: 9px;
+  height: 45px;
+  border: 1px solid;
+  font-size: 16px;
+  text-align: -webkit-center;
+}
+#cod-turma, #horario{
+  width: 274px;
+    height: 39px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 11px;
+}
+#botao-reservar{
+  margin-top: 21px;
+  width: 103px;
+  height: 30px;
+  background-color: blue;
+}
+#modal-excluir{
+  display: none;
+}
+#form-excluir{
+  display: flex;
+    margin: 0;
+    justify-content: space-around;
+}
+#resultado-form{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 41px;
+}
+#excluir-modal{
+  background-color: red;
+  margin-top: 70px;
+}
+#fechar-modalExcluir{
+  background-color: red;
+  margin-left: 724px;
+}
